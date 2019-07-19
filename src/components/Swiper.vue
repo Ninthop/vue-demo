@@ -18,9 +18,9 @@ export default {
                 pagination: {
                     el: ".swiper-pagination ",
                     clickable: true,
-                    clickableClass : '.swiper-pagination-clickable',
                 },
-                loop: true
+                loop: true,
+                autoplay: true
             },
             swiperList: [{
                 id: '01',
