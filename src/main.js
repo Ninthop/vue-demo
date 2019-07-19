@@ -8,6 +8,7 @@ import './assets/style/border.css'
 import './assets/style/iconfont.css'
 import 'swiper/dist/css/swiper.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import './assets/icon-font/iconfont.js'
 
 Vue.config.productionTip = false
 Vue.use(VueAwesomeSwiper)

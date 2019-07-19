@@ -94,28 +94,30 @@ export default {
         margin-top 0.5rem
         text-align center
     .icons >>> .swiper-container
-        padding-bottom 1rem
-    .icon
-        position relative
-        top 3px
-        float left
-        width 25%
-        height 4.7rem
-        margin-top 5px
-        .icon-img
-            text-align center
-            position absolute
-            left 0
-            right 0
+        padding-bottom 0.3rem
+    .icons
+        background-color white
+        .icon
+            position relative
+            top 3px
+            float left
+            width 25%
             height 4.7rem
-            color $iconTextColor
-            .icon-content
-                height 73.35%
-                display block
-                margin 0 auto
-            .icon-font
-                font-size 14px
-                margin-top 5px
-                height 1rem
-                ellipsis()
+            margin-top 5px
+            .icon-img
+                text-align center
+                position absolute
+                left 0
+                right 0
+                height 4.7rem
+                color $iconTextColor
+                .icon-content
+                    height 73.35%
+                    display block
+                    margin 0 auto
+                .icon-font
+                    font-size 14px
+                    margin-top 5px
+                    height 1rem
+                    ellipsis()
 </style>
