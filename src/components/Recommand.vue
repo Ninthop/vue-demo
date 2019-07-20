@@ -8,6 +8,9 @@
         </div>
         <div class="rec-whole" v-for="item of RecList" :key="item.id">
             <div class="rec-left">
+                <span class="rec-left-label" v-if="item.label == '随买随用'">{{ item.label }}</span>
+                <span class="rec-left-labelTwo" v-else-if="item.label == '可定明日'">{{ item.label }}</span>
+                <div v-else></div>
                 <img :src="item.url" alt="" class="rec-img">
             </div>
             <div class="rec-right">
@@ -56,7 +59,8 @@ export default {
                 commentNumber: "3003",
                 price: "485",
                 location: "苏州乐园",
-                special: "东南亚风情水上乐园，体验别样风情"
+                special: "东南亚风情水上乐园，体验别样风情",
+                label: "随买随用"
             },{
                 id: '00002',
                 url: "http://img1.qunarzz.com/sight/p0/201405/14/3dfad2bcd30c40e91a15f8b7296d86a6.jpg_200x200_265db173.jpg",
@@ -64,7 +68,8 @@ export default {
                 commentNumber: "13697",
                 price: "35",
                 location: "吴江市",
-                special: null
+                special: null,
+                label: "随买随用"
             },{
                 id: '00003',
                 url: "http://img1.qunarzz.com/sight/p0/1505/3c/3c760c67b7cd23a6.water.jpg_200x200_005b1381.jpg",
@@ -74,7 +79,8 @@ export default {
                 location: "高新区",
                 special: `<svg class="icon" aria-hidden="true" style="width: 1.2rem; height: 1.2rem">
                             <use xlink:href="#iconhuo"></use>
-                        </svg>好评如潮，小伙伴热推景点~`
+                        </svg>好评如潮，小伙伴热推景点~`,
+                label: "可定明日"
             },{
                 id: '00004',
                 url: "http://img1.qunarzz.com/tuan/team2/1507/49/40f46fd83f4ae7.jpg_200x200_7a0a0674.jpg",
@@ -82,7 +88,8 @@ export default {
                 commentNumber: "2109",
                 price: "45",
                 location: "高新区",
-                special: null
+                special: null,
+                label: ""
             },{
                 id: '00005',
                 url: "http://img1.qunarzz.com/sight/p0/201301/14/bf26ff3662c7a2a393835fbb.png_200x200_35c6466e.png",
@@ -90,7 +97,8 @@ export default {
                 commentNumber: "626",
                 price: "119.9",
                 location: "吴中区",
-                special: "还原马代水下珊瑚环境，别样珊瑚情结"
+                special: "还原马代水下珊瑚环境，别样珊瑚情结",
+                label: "随买随用"
             }],
         }
     }
@@ -117,6 +125,22 @@ export default {
                 float left
                 margin-right 0.7rem
                 height 100%
+                .rec-left-label
+                    position absolute
+                    left .8rem
+                    font-size 0.7rem
+                    background-image url(https://img1.qunarzz.com/piao/fusion/1802/20/2ba6d10b17972e02.png)
+                    color white
+                    padding 0.2rem
+                    border-bottom-right-radius .7rem
+                .rec-left-labelTwo
+                    position absolute
+                    left .8rem
+                    font-size 0.7rem
+                    background-image url(https://img1.qunarzz.com/piao/fusion/1802/52/b9080e45b69b4f02.png)
+                    color white
+                    padding 0.2rem
+                    border-bottom-right-radius .7rem
                 .rec-img
                     width 6.25rem
                     margin-left 0.8rem

@@ -14,6 +14,10 @@
             <swiper :options="swiperOption">
                 <swiper-slide v-for="item of HotList" :key="item.id">
                     <div class="hot-whole">
+                        <span class="hot-label" v-if="item.top != null">
+                            <img class="hot-label-top1" :src="item.top" alt="">
+                        </span>
+                        <div class="hot-label" v-else></div>
                         <img class="hot-img" :src="item.url" alt="">
                         <div class="hot-text">
                             {{ item.name }}
@@ -40,17 +44,20 @@ export default {
                 id: '0001',
                 url: "http://img1.qunarzz.com/sight/p0/1603/85/85aa0c000578a01e90.water.jpg_250x250_57d288e6.jpg",
                 name: "拙政园",
-                price: "￥39"
+                price: "￥39",
+                top: "http://img1.qunarzz.com/piao/fusion/1710/ab/159673b63e6ca702.png"
             },{
                 id: '0002',
                 url: "http://img1.qunarzz.com/sight/p0/1802/19/19ea68a3f2b8a9c7a3.img.jpg_250x250_d07f9b49.jpg",
                 name: "狮子林",
-                price: "￥0.7"
+                price: "￥0.7",
+                top: "http://img1.qunarzz.com/piao/fusion/1710/2d/36d0c4adaebbbc02.png"
             },{
                 id: '0003',
                 url: "http://img1.qunarzz.com/sight/p0/201305/21/11a6f465375344e6c8d65eac.jpg_250x250_efe640a9.jpg",
                 name: "寒山寺",
-                price: "￥17.1"
+                price: "￥17.1",
+                top: "http://img1.qunarzz.com/piao/fusion/1710/67/edc47ffef9e96b02.png"
             },{
                 id: '0004',
                 url: "http://img1.qunarzz.com/sight/p0/1707/33/33c133cf198d092aa3.water.jpg_250x250_e1283ca1.jpg",
@@ -133,6 +140,14 @@ export default {
                 width 6.25rem
                 height 9.625rem
                 float left
+                .hot-label
+                    position absolute
+                    .hot-label-top1
+                        width 2.5rem
+                    .hot-label-top2
+                        width 2.5rem
+                    .hot-label-top3
+                        width 2.5rem
                 .hot-img
                     height 6.25rem
                     margin-bottom .25rem

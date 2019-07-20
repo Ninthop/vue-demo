@@ -32,7 +32,7 @@ export default {
         .head-left
             .backIcon
                 font-size 20px
-            width 3.2rem
+            width 2.5rem
             float left
             display flex
             align-items center
@@ -42,8 +42,8 @@ export default {
             align-items center
             flex 1
             background-color white
-            border-radius 0.3rem
-            margin 0.5rem 0
+            border-radius 0.2rem
+            margin 0.4rem 0
             padding-left 0.5rem
             color lightgray
         .head-right
