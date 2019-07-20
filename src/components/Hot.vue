@@ -12,7 +12,7 @@
         </div>
         <div class="hots">
             <swiper :options="swiperOption">
-                <swiper-slide v-for="item of HotList" :key="item.id">
+                <swiper-slide v-for="item of list" :key="item.id">
                     <div class="hot-whole">
                         <span class="hot-label" v-if="item.top != null">
                             <img class="hot-label-top1" :src="item.top" alt="">
@@ -38,62 +38,11 @@
 <script>
 export default {
     name: 'HomeHot',
+    props: {
+        list: Array
+    },
     data () {
         return {
-            HotList: [{
-                id: '0001',
-                url: "http://img1.qunarzz.com/sight/p0/1603/85/85aa0c000578a01e90.water.jpg_250x250_57d288e6.jpg",
-                name: "拙政园",
-                price: "￥39",
-                top: "http://img1.qunarzz.com/piao/fusion/1710/ab/159673b63e6ca702.png"
-            },{
-                id: '0002',
-                url: "http://img1.qunarzz.com/sight/p0/1802/19/19ea68a3f2b8a9c7a3.img.jpg_250x250_d07f9b49.jpg",
-                name: "狮子林",
-                price: "￥0.7",
-                top: "http://img1.qunarzz.com/piao/fusion/1710/2d/36d0c4adaebbbc02.png"
-            },{
-                id: '0003',
-                url: "http://img1.qunarzz.com/sight/p0/201305/21/11a6f465375344e6c8d65eac.jpg_250x250_efe640a9.jpg",
-                name: "寒山寺",
-                price: "￥17.1",
-                top: "http://img1.qunarzz.com/piao/fusion/1710/67/edc47ffef9e96b02.png"
-            },{
-                id: '0004',
-                url: "http://img1.qunarzz.com/sight/p0/1707/33/33c133cf198d092aa3.water.jpg_250x250_e1283ca1.jpg",
-                name: "虎丘",
-                price: "￥78"
-            },{
-                id: '0005',
-                url: "http://img1.qunarzz.com/sight/p0/201405/14/3dfad2bcd30c40e91a15f8b7296d86a6.jpg_250x250_118aa466.jpg",
-                name: "同里古镇",
-                price: "￥35"
-            },{
-                id: '0006',
-                url: "http://img1.qunarzz.com/sight/p0/1503/38/3806235c8444b759.water.jpg_250x250_b8f101fe.jpg",
-                name: "周庄",
-                price: "￥88"
-            },{
-                id: '0007',
-                url: "http://img1.qunarzz.com/sight/p0/1906/69/6905dabd406023a8a3.img.jpg_250x250_8ba6f2e7.jpg",
-                name: "华谊兄弟电影世界",
-                price: "￥199.1"
-            },{
-                id: '0008',
-                url: "http://img1.qunarzz.com/sight/p0/1603/41/411873a415e03f1e90.water.jpg_250x250_dfd23a08.jpg",
-                name: "留园",
-                price: "￥53"
-            },{
-                id: '0009',
-                url: "http://img1.qunarzz.com/sight/p0/1903/61/617ac4a711f6cb34a3.img.jpg_250x250_b12a4f71.jpg",
-                name: "苏州乐园森林水上乐园",
-                price: "￥485"
-            },{
-                id: '0010',
-                url: "http://img1.qunarzz.com/sight/p0/1412/b4/77f601b2a965f62a39a8939fbd5db488.water.jpg_250x250_3d4d311c.jpg",
-                name: "七里山塘",
-                price: "￥50"
-            },],
             swiperOption: {
                 freeMode: true,
                 freeModeMomentumVelocityRatio: 0.8,

@@ -17,50 +17,11 @@
 <script>
 export default {
     name: 'HomeIcons',
+    props: {
+        list: Array
+    },
     data () {
         return {
-            iconList: [{
-                id:'001',
-                url: "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-                decr: "景点门票"
-            },{
-                id:'002',
-                url: "http://img1.qunarzz.com/piao/fusion/1803/67/9a1678221b8e0e02.png",
-                decr: "古镇"
-            },{
-                id: '003',
-                url: "http://img1.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png",
-                decr: "亲子游"
-            },{
-                id: '004',
-                url: "http://img1.qunarzz.com/piao/fusion/1803/17/99402a22ce4af302.png",
-                decr: "苏州园林"
-            },{
-                id: '005',
-                url: "http://img1.qunarzz.com/piao/fusion/1803/fa/2548667cb6e902.png",
-                decr: "寒山寺"
-            },{
-                id: '006',
-                url: "https://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png",
-                decr: "华谊兄弟"
-            },{
-                id: '007',
-                url: "http://img1.qunarzz.com/piao/fusion/1803/90/59a2f523ee2f9202.png",
-                decr: "狮子林"
-            },{
-                id: '008',
-                url: "http://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png",
-                decr: "拙政园"
-            },{
-                id: '009',
-                url: "http://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png",
-                decr: "虎丘"
-            },{
-                id: '010',
-                url: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/ac9ef584416467d8cc557aad650959fd.png",
-                decr: "上方山"
-            }],
-
             swiperOption: {
                 pagination: {
                     el: ".icon-swiper-pagination ",
@@ -72,7 +33,7 @@ export default {
     computed: {
         pages () {
             const pages = []
-            this.iconList.forEach((item, index) => {
+            this.list.forEach((item, index) => {
                 const page = Math.floor(index / 8)
                 if (!pages[page]) {
                     pages[page] = []
