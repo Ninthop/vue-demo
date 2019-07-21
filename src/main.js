@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
+import router from './router/'
 import store from './store'
 import fastClick from 'fastClick'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 import './assets/style/reset.css'
 import './assets/style/border.css'
 import './assets/style/iconfont.css'
 import 'swiper/dist/css/swiper.css'
-import VueAwesomeSwiper from 'vue-awesome-swiper'
 import './assets/icon-font/iconfont.js'
 
 Vue.config.productionTip = false

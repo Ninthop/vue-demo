@@ -3,11 +3,12 @@ const path = require('path')
 const resolve = dir => path.join(__dirname, dir)
 
 module.exports = {
+  publicPath: process.env.NODE_ENV === 'production' ? '/iview-admin/' : '/',
   chainWebpack: config => {
     config.resolve.alias
       .set('@', resolve('src'))
       .set('_c', resolve('src/components'))
-      .set('_style', api.resolve('src/assets/style'))
+      .set('_style', resolve('src/assets/style'))
   },
   // 打包时不生成.map文件
   productionSourceMap: false,

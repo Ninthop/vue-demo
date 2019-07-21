@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import HomeHeader from '_c/Header.vue'
-import HomeSwiper from '_c/Swiper.vue'
-import HomeIcons from '_c/Icons.vue'
-import HomeHot from '_c/Hot.vue'
-import HomeRecommand from '_c/Recommand.vue'
-import HomeWeekends from '_c/Weekends.vue'
+import HomeHeader from '_c/Home/Header.vue'
+import HomeSwiper from '_c/Home/Swiper.vue'
+import HomeIcons from '_c/Home/Icons.vue'
+import HomeHot from '_c/Home/Hot.vue'
+import HomeRecommand from '_c/Home/Recommand.vue'
+import HomeWeekends from '_c/Home/Weekends.vue'
 import axios from 'axios'
 
 export default {
@@ -38,28 +38,23 @@ export default {
       WeekList: []
     }
   },
-  methods: {
-     getHomeInfo () {
-       axios.get('/api/index.json')
-         .then(this.getHomeInfoSucc)
-     },
-     getHomeInfoSucc (res) {
-       res = res.data
-       if (res.ret && res.data){
-         const data = res.data
-         this.city = data.city
-         this.swiperList = data.swiperList
-         this.iconList = data.iconList
-         this.HotList = data.HotList
-         this.RecList = data.RecList
-         this.WeekList = data.WeekList
-       }
-       console.log(res)
-     }
-   },
-   mounted() {
-     this.getHomeInfo()
-   }
+  mounted () {
+      axios
+        .get('/api/index.json')
+        .then(response => {
+          const data = response.data.data
+          this.city = data.city
+          this.swiperList = data.swiperList
+          this.iconList = data.iconList
+          this.HotList = data.HotList
+          this.RecList = data.RecList
+          this.WeekList = data.WeekList
+          console.log(response)
+          })
+        .catch(function (error) { // 请求失败处理
+          console.log(error);
+        });
+  }
 }
 </script>
 

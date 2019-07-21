@@ -7,12 +7,14 @@
             <span class="iconfont">&#xe632;</span>
             输入城市/景点/游玩主题
         </div>
-        <div class="head-right">
-            {{ this.city }}
-            <span class="iconfont cityIcon">
-                &#xe60c;
-            </span>
-        </div>
+        <router-link to="/city" class="head-right">
+            <div class="head-right">
+                {{ this.city }}
+                <span class="iconfont cityIcon">
+                    &#xe60c;
+                </span>
+            </div>
+        </router-link>
     </div>
 </template>
 
@@ -50,15 +52,18 @@ export default {
             padding-left 0.5rem
             color lightgray
         .head-right
-            .cityIcon
-                margin-left 0.2rem
-                margin-top 0.1rem
-                font-size 0.9rem
+            text-decoration none
+            color white
             width 4.2rem
             float right
             display flex
             align-items center
             justify-content center
+            font-size 0.9rem
+            .cityIcon
+                margin-left 0.2rem
+                margin-top 0.1rem
+                font-size 0.9rem
 </style>
 
 
