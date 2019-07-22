@@ -1,11 +1,13 @@
 <template>
     <div class="city">
-        <city-header></city-header>
+        <city-header 
+          :list="alhpaList"
+          @chosen="handleChosen"
+        ></city-header>
         <all-city-list 
           :list="alhpaList"
           :hotlist="hotCityList"
-          @change="handleLetterChange"
-          :letter="letter"
+          :country="country"
         ></all-city-list>
     </div>
 </template>
@@ -25,7 +27,7 @@ export default {
         return {
             hotCityList: [],
             alhpaList: [],
-            letter: ''
+            country: 'china'
         }
     },
     mounted () {
@@ -34,7 +36,6 @@ export default {
         .then(response => {
           const data = response.data
           this.alhpaList = data.cityList
-          console.log(response.data)
           })
         .catch(function (error) { // 请求失败处理
           console.log(error);
@@ -44,15 +45,14 @@ export default {
         .then(response => {
           const data = response.data.data
           this.hotCityList = data.hotCityList
-          console.log(response.data)
           })
         .catch(function (error) { // 请求失败处理
           console.log(error);
         });
   },
   methods: {
-    handleLetterChange (letter) {
-      this.letter = letter
+    handleChosen (country) {
+      this.country = country
     }
   }
 }

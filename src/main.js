@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router/'
-import store from './store'
+import store from './store/'
 import fastClick from 'fastClick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import './assets/style/reset.css'

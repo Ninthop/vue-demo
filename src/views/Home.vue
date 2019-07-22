@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <home-header :city="city"></home-header>
+    <home-header></home-header>
     <home-swiper :list="swiperList"></home-swiper>
     <home-icons :list="iconList"></home-icons>
     <home-hot :list="HotList"></home-hot>
@@ -17,6 +17,7 @@ import HomeHot from '_c/Home/Hot.vue'
 import HomeRecommand from '_c/Home/Recommand.vue'
 import HomeWeekends from '_c/Home/Weekends.vue'
 import axios from 'axios'
+import { mapState } from 'vuex'
 
 export default {
   name: 'home',
@@ -30,30 +31,39 @@ export default {
   },
   data () {
     return {
-      city: '',
       swiperList: [],
       iconList: [],
       HotList: [],
       RecList: [],
-      WeekList: []
+      WeekList: [],
+      lastCity: ''
     }
+  },
+  computed: {
+    ...mapState(['city'])
   },
   mounted () {
       axios
-        .get('/api/index.json')
+        .get('/api/index.json?city=' + this.city)
         .then(response => {
           const data = response.data.data
-          this.city = data.city
           this.swiperList = data.swiperList
           this.iconList = data.iconList
           this.HotList = data.HotList
           this.RecList = data.RecList
           this.WeekList = data.WeekList
-          console.log(response)
           })
         .catch(function (error) { // 请求失败处理
           console.log(error);
         });
+        this.lastCity = this.city
+  },
+  activated () {
+    if(this.lastCity != this.city) {
+      this.lastCity = this.city
+      axios
+        .get('/api/index.json?city=' + this.city)
+    }
   }
 }
 </script>
