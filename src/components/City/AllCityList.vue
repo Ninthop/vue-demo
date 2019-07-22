@@ -25,7 +25,7 @@
                 :key="allCity.cities.id"
                 :ref="allCity.idx"
             >
-                <div class="city-alpha">{{ allCity.idx }}</div>
+                <div class="city-alpha" @click="backTop()">{{ allCity.idx }}</div>
                 <ul class="city-list">
                     <li v-for="(city, index) of allCity.cities" :key="index">{{ city.name }}</li>
                 </ul>
@@ -46,17 +46,20 @@ export default {
     methods: {
         handleAlphaClick (e) {
             this.$emit('change', e.target.innerText)
+        },
+        backTop () {
+            this.scroll.scrollTo(0, 0, 700)
         }
     },
     mounted() {
-      this.scroll = new Bscroll(this.$refs.wrapper, {click: true})
+      this.scroll = new Bscroll(this.$refs.wrapper, {click: true, bounce: false})
     },
     watch: {
         letter () {
             console.log(this.$refs)
             if(this.letter) {
                 const element = this.$refs[this.letter][0]
-                this.scroll.scrollToElement(element)
+                this.scroll.scrollToElement(element, 700)
             }
         }
     }
@@ -67,7 +70,7 @@ export default {
     @import '~_style/minins.styl'
     @import '~_style/varibles.styl'
     .wrapper
-        height 100vh
+        height 90vh
         .all-city
             position absolute
             left 0
