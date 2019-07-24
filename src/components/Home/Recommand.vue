@@ -6,7 +6,12 @@
             </svg>
             <span class="yourLove-text">猜你喜欢</span>
         </div>
-        <div class="rec-whole" v-for="item of list" :key="item.id">
+        <router-link 
+            tag="div" 
+            v-for="item of list" 
+            :key="item.id" :to="'/detail/' + item.id"
+            class="rec-whole"
+        >
             <div class="rec-left">
                 <span class="rec-left-label" v-if="item.label == '随买随用'">{{ item.label }}</span>
                 <span class="rec-left-labelTwo" v-else-if="item.label == '可定明日'">{{ item.label }}</span>
@@ -41,8 +46,8 @@
                 </div>
                 <div class="rec-special" v-if="item.special != null" v-html="item.special">{{ item.special }}</div>
                 <div v-else></div>
-            </div>
-        </div>
+                </div>
+        </router-link>
         <div class="rec-last">查看所有产品</div>
     </div>
 </template>

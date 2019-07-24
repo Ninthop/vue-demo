@@ -131,7 +131,7 @@ export default {
                             height 2.81rem
                             line-height 2.9rem
                             ellipsis()
-                            border-left 0.001rem solid #ddd
+                            border-right 0.001rem solid #ddd
 
                 .alpha-sort
                     .alphabet-alpha
@@ -173,6 +173,6 @@ export default {
                                 display flex
                                 justify-content center
                                 align-items center
-                                border-left 0.001rem solid #ddd
+                                border-right 0.001rem solid #ddd
 
 </style>

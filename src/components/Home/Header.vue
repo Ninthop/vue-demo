@@ -36,7 +36,6 @@ export default {
         height 2.8rem
         background-color $bgColor
         color white
-
         .head-left
             .backIcon
                 font-size 20px
@@ -46,6 +45,7 @@ export default {
             align-items center
             justify-content center
         .head-middle
+            user-select none
             display flex
             align-items center
             flex 1
