@@ -54,6 +54,9 @@ export default {
             margin 0.4rem 0
             padding-left 0.5rem
             color lightgray
+            font-size 0.9rem
+            .iconfont
+                margin-right 0.4rem
         .head-right
             text-decoration none
             color white

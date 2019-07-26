@@ -46,7 +46,6 @@ export default {
         window.addEventListener('scroll', this.handleScroll)
     },
     destroyed () {
-        console.log(6)
         window.removeEventListener('scroll', this.handleScroll)
     }
 }

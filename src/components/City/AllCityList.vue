@@ -13,9 +13,10 @@
                         <h2 class="hot-city-title">热门城市</h2>
                         <ul class="hot-city-table">
                             <li 
-                                v-for="item of hotlist" 
+                                v-for="(item, index) of hotlist" 
                                 :key="item.id"
                                 @click="handleCityClick(item.city)"
+                                :class="gernerateClass(hotlist.length, index, 3)" 
                             >{{ item.city }}</li>
                         </ul>
                     </div>
@@ -42,7 +43,10 @@
                             v-for="(city, index) of allCity.cities" 
                             :key="index"
                             @click="handleCityClick(city.name)"
-                        >{{ city.name }}</li>
+                            :class="gernerateClass(allCity.cities.length, index, 4)" 
+                        >
+                            {{ city.name }}
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -65,6 +69,11 @@ export default {
         hotlist: Array,
         country: String
     },
+    data () {
+        return {
+            flag: 1
+        }
+    },
     methods: {
         handleAlphaClick (e) {
             const element = this.$refs[e.target.innerText][0]
@@ -77,7 +86,11 @@ export default {
             this.changeCity(city)
             this.$router.push('/')
         },
-        ...mapMutations(['changeCity'])
+        ...mapMutations(['changeCity']),
+
+        gernerateClass (city, index, num) {
+            return index+1 > city - (city%num === 0 ? num : city%num ) ? 'no-border': ''
+        }
     },
     computed: {
         ...mapState({
@@ -122,7 +135,6 @@ export default {
                         display flex
                         flex-wrap wrap
                         position relative
-                        
                         li
                             font-size 0.9rem
                             width 24.99%
@@ -132,7 +144,8 @@ export default {
                             line-height 2.9rem
                             ellipsis()
                             border-right 0.001rem solid #ddd
-
+                        .no-border
+                            border-bottom 0
                 .alpha-sort
                     .alphabet-alpha
                         height 11.25rem
@@ -174,5 +187,7 @@ export default {
                                 justify-content center
                                 align-items center
                                 border-right 0.001rem solid #ddd
+                            .no-border
+                                border-bottom 0
 
 </style>

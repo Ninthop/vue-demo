@@ -4,16 +4,18 @@ export default[
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      params: {
+        
+      }
     },{
       path: '/city',
       name: 'city',
       component: () => import('../views/City.vue')
     },
     {
-      path: '/detail/:id',
+      path: '/detail/:name',
       name: 'detail',
       component: () => import('../views/Detail.vue')
-    },
-    
+    }
 ]

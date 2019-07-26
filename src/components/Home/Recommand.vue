@@ -9,9 +9,11 @@
         <router-link 
             tag="div" 
             v-for="item of list" 
-            :key="item.id" :to="'/detail/' + item.id"
+            :key="item.id" 
+            :to="'/detail/' + item.name"
             class="rec-whole"
         >
+        <div @click="handleChangeAttra(item.name)">
             <div class="rec-left">
                 <span class="rec-left-label" v-if="item.label == '随买随用'">{{ item.label }}</span>
                 <span class="rec-left-labelTwo" v-else-if="item.label == '可定明日'">{{ item.label }}</span>
@@ -47,6 +49,7 @@
                 <div class="rec-special" v-if="item.special != null" v-html="item.special">{{ item.special }}</div>
                 <div v-else></div>
                 </div>
+            </div>
         </router-link>
         <div class="rec-last">查看所有产品</div>
     </div>
@@ -58,6 +61,12 @@ export default {
     props: {
         list: Array
     },
+    methods: {
+        handleChangeAttra (attraction) {
+            console.log(attraction)
+            this.$store.dispatch('changeAttra', attraction)
+        }
+    }
 }
 
 </script>

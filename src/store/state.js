@@ -1,5 +1,6 @@
 const state = {
-    city: localStorage.city || '苏州'
+    city: localStorage.city || '苏州',
+    attraction: '苏州乐园森林水世界'
 }
 
 let defaultCity = '苏州'
