@@ -19,7 +19,7 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'http://localhost:8080',   //代理接口
+        target: 'https://ninthop.github.io/vue-demo/dist',   //代理接口
         changeOrigin: true,
         ws: true,
         pathRewrite: {
