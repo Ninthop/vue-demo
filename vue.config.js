@@ -23,7 +23,7 @@ module.exports = {
         changeOrigin: true,
         ws: true,
         pathRewrite: {
-          '^/api': '/mock'    //代理的路径
+          '^/api': 'https://ninthop.github.io/vue-demo/dist/mock'    //代理的路径
         }
       }
     },
