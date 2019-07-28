@@ -8,7 +8,7 @@
             </div>
             <div class="banner-number">
                 <span class="iconfont">&#xe632;</span>
-                26
+                {{ imgs.length }}
             </div>
         </div>
         <fade>
@@ -32,7 +32,7 @@ export default {
             showGallary: false,
             imgs: ['http://img1.qunarzz.com/sight/p0/1903/61/617ac4a711f6cb34a3.img.jpg_r_800x800_f6d84656.jpg',
                     'http://img1.qunarzz.com/sight/p0/1903/47/4773b984f99d9010a3.img.jpg_r_800x800_559bf444.jpg',
-                    'http://img1.qunarzz.com/sight/p0/1903/3e/3e4d43719773bb7aa3.img.jpg_r_800x800_2d3115cb.jpg']
+                    'http://img1.qunarzz.com/sight/p0/1903/3e/3e4d43719773bb7aa3.img.jpg_r_800x800_2d3115cb.jpg'],
         }
     },
     components: {

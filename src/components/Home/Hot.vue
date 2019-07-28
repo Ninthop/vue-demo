@@ -52,8 +52,8 @@ export default {
         return {
             swiperOption: {
                 freeMode: true,
-                freeModeMomentumVelocityRatio: 0.8,
-                freeModeMomentumRatio: 0.5,
+                freeModeMomentumVelocityRatio: 3,
+                freeModeMomentumRatio: 1,
                 slidesPerView :'auto' ,
                 spaceBetween: 6,
                 scrollbar: {

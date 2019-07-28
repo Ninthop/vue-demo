@@ -153,28 +153,28 @@ export default {
                             background-size contain
                     .rec-comment
                         margin-left 0.5rem
-                        font-size 0.5rem
+                        font-size 0.7rem
                         color gray
                 .rec-price
                     margin-top 0.8rem
                     .rec-symbol
                         color $moneyColor
-                        font-size 0.5rem
+                        font-size 0.7rem
                     .rec-number
                         color $moneyColor
                         font-size 1.3rem
                     .rec-price-text
-                        font-size 0.5rem
+                        font-size 0.7rem
                         color gray
                     .rec-location
                         float right
                         margin-top 0.4rem
                         margin-right 0.8rem
-                        font-size 0.5rem
+                        font-size 0.7rem
                         color gray
                 .rec-special
                     display inline-block
-                    font-size 0.5rem
+                    font-size 0.7rem
                     margin-top 1.5rem
                     background-color #fff9f9
                     padding 3px

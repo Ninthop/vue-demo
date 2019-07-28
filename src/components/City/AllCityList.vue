@@ -144,15 +144,31 @@ export default {
                         display flex
                         flex-wrap wrap
                         position relative
+                        &:before
+                            content: ''
+                            height 100%
+                            position absolute
+                            left 25%
+                            width 25%
+                            border-left 0.02rem solid #ddd
+                            border-right 0.02rem solid #ddd
+                        &:after
+                            content: ''
+                            height 100%
+                            position absolute
+                            right 25%
+                            width 25%
+                            border-right 0.02rem solid #ddd
                         li
+                            position relative
+                            z-index 10
                             font-size 0.9rem
-                            width 24.99%
+                            width 25%
                             text-align center
                             border-bottom .02rem solid #ddd
                             height 2.81rem
                             line-height 2.9rem
                             ellipsis()
-                            border-right 0.001rem solid #ddd
                         .no-border
                             border-bottom 0
                 .alpha-sort
@@ -186,7 +202,17 @@ export default {
                             display flex
                             flex-wrap wrap
                             position relative
+                            &:before
+                                content: ''
+                                position absolute
+                                left 33.33%
+                                width 33.33%
+                                height 100%
+                                border-left 0.02rem solid #ddd
+                                border-right 0.02rem solid #ddd
                             li
+                                position relative
+                                z-index 10
                                 font-size 0.9rem
                                 width 33.33%
                                 text-align center
@@ -195,7 +221,6 @@ export default {
                                 display flex
                                 justify-content center
                                 align-items center
-                                border-right 0.001rem solid #ddd
                             .no-border
                                 border-bottom 0
 

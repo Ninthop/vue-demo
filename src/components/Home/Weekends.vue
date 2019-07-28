@@ -26,7 +26,7 @@ export default {
     @import '~_style/minins.styl'
     .week
         .week-header
-            height 2.5rem
+            height 3rem
             display flex
             align-items center
             padding-left 0.8rem
@@ -42,7 +42,7 @@ export default {
                 font-size 0.85rem
             .week-introduction
                 margin 0 0 0 0.6rem
-                font-size 0.6rem
+                font-size 0.7rem
                 color gray
                 ellipsis()
 </style>

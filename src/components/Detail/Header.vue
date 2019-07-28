@@ -27,7 +27,7 @@ export default {
             this.$router.go(-1)
         },
         handleScroll () {
-            const top = document.documentElement.scrollTop
+            const top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset
             if (top <= 0){
                 this.showFixed = false
                 this.showAbs = true
@@ -42,7 +42,7 @@ export default {
             }
         }
     },
-    created () {
+    mounted () {
         window.addEventListener('scroll', this.handleScroll)
     },
     destroyed () {

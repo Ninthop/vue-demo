@@ -52,7 +52,7 @@ export default {
                         font-size 0.9rem
                         margin-top 0.4rem
                     .attra-time
-                        font-size 0.5rem
+                        font-size 0.7rem
                         margin 0.4rem 0 0 0.8rem
                         color gray
                     .intro-right
@@ -66,7 +66,7 @@ export default {
                     border-right 0.01rem solid #f5f5f5
                     position relative
                     float left
-                    width 50%
+                    width 49%
                     height 2.8rem
                     .intro-left
                         position absolute
@@ -82,7 +82,7 @@ export default {
                             font-size 1.3rem
                     .intro
                         color gray 
-                        font-size 0.6rem
+                        font-size 0.7rem
                         margin-top 0.4rem
                         padding-left 0.6rem
                         .intro-list
