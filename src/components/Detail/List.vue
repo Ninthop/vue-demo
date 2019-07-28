@@ -1,19 +1,22 @@
 <template>
+    <!-- 详情页具体内容 -->
     <div class="detail-list">
+        <!-- 一级标题 -->
         <div
             class="detail-list-item border-bottom"
             v-for="(item, index) of detailRec"
             :key="index"
         >
-        <span class="detail-list-item-title">{{ item.title }}</span>
-        <rec :detailRec="item.children"></rec>
+            <span class="detail-list-item-title">{{ item.title }}</span>
+            <rec :detailRec="item.children" class="detail-list-rec"></rec>
         </div>
+        <!-- 二级及以下 -->
         <div
             class="detail-list-item"
             v-for="(item2, index) of detailList"
             :key="(index+1)*10"
         >
-        <span class="detail-list-item-title">{{ item2.title }}</span>
+            <span class="detail-list-item-title">{{ item2.title }}</span>
             <div    
                 v-if="item2.children"
                 class="detail-list-item2-child"

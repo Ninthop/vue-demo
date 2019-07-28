@@ -1,4 +1,5 @@
 <template>
+    <!-- 周末去哪儿 -->
     <div class="week">
         <div class="week-header">
             周末去哪儿

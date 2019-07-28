@@ -1,4 +1,5 @@
 <template>
+    <!-- 首页热门榜单 -->
     <div class="hot">
         <div class="hot-header">
             <svg class="icon" aria-hidden="true">
@@ -13,20 +14,26 @@
         <div class="hots">
             <swiper :options="swiperOption">
                 <swiper-slide v-for="item of list" :key="item.id">
-                    <div class="hot-whole">
-                        <span class="hot-label" v-if="item.top != null">
-                            <img class="hot-label-top1" :src="item.top" alt="">
-                        </span>
-                        <div class="hot-label" v-else></div>
-                        <img class="hot-img" :src="item.url" alt="">
-                        <div class="hot-text">
-                            {{ item.name }}
-                            <div class="hot-price">
-                                <span class="hot-price-number">{{ item.price }}</span>
-                                起
+                    <router-link 
+                        tag="div" 
+                        class="hot-whole" 
+                        :to="'/detail/' + item.name" 
+                    >
+                        <div  @click="handleChangeAttra(item.name)">
+                            <span class="hot-label" v-if="item.top != null">
+                                <img class="hot-label-top1" :src="item.top" alt="">
+                            </span>
+                            <div class="hot-label" v-else></div>
+                            <img class="hot-img" :src="item.url" alt="">
+                            <div class="hot-text">
+                                {{ item.name }}
+                                <div class="hot-price">
+                                    <span class="hot-price-number">{{ item.price }}</span>
+                                    起
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </router-link>
                 </swiper-slide>
             </swiper>
             <div class="swiper-scrollbar"></div>
@@ -55,6 +62,12 @@ export default {
                     dragSize: 120,
                 },
             }
+        }
+    },
+    methods: {
+        handleChangeAttra (attraction) {
+            console.log(attraction  + '请求了数据')
+            this.$store.dispatch('changeAttra', attraction)
         }
     }
 }

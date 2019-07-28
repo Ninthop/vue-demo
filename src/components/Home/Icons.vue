@@ -1,4 +1,5 @@
 <template>
+    <!-- 首页图标部分 -->
     <div class="icons">
         <swiper :options="swiperOption">
             <swiper-slide v-for="(page, index) of pages" :key="index">
@@ -9,7 +10,7 @@
                     tag="div"
                     :to="'/icons/' + item.decr"
                 >
-                    <div class="icon-img">
+                    <div class="icon-img" @click="handleEmit(item.decr)">
                         <img class="icon-content iconList" :src="item.url" alt="">
                         <div class='icon-font'>{{ item.decr }}</div>
                     </div>
@@ -34,6 +35,11 @@ export default {
                     clickable: true,
                 }
             }
+        }
+    },
+    methods: {
+        handleEmit (decr) {
+            this.$store.dispatch('changeIcons', decr)
         }
     },
     computed: {

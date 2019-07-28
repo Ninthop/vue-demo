@@ -112,6 +112,7 @@
             "name": "苏州乐园森林水世界",
             "commentNumber": "3003",
             "price": "485",
+            "score": 4.6,
             "location": "苏州乐园",
             "special": "东南亚风情水上乐园，体验别样风情",
             "label": "随买随用"
@@ -121,6 +122,7 @@
             "name": "同里古镇",
             "commentNumber": "13697",
             "price": "35",
+            "score": 4.2,
             "location": "吴江市",
             "special": null,
             "label": "随买随用"
@@ -130,6 +132,7 @@
             "name": "苏州乐园",
             "commentNumber": "10503",
             "price": "75",
+            "score": 3.8,
             "location": "高新区",
             "special": "<svg class='icon' aria-hidden='true' style='width: 1.2rem; height: 1.2rem'><use xlink:href='#iconhuo'></use></svg>好评如潮，小伙伴热推景点~",
             "label": "可定明日"
@@ -139,6 +142,7 @@
             "name": "白马涧",
             "commentNumber": "2109",
             "price": "45",
+            "score": 4,
             "location": "高新区",
             "special": null,
             "label": ""
@@ -148,6 +152,7 @@
             "name": "苏州海洋馆",
             "commentNumber": "626",
             "price": "119.9",
+            "score": 5,
             "location": "吴中区",
             "special": "还原马代水下珊瑚环境，别样珊瑚情结",
             "label": "随买随用"

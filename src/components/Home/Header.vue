@@ -1,12 +1,13 @@
 <template>
+    <!-- 首页头部 -->
     <div class="head">
         <div class="head-left">
             <span class="iconfont backIcon">&#xe624;</span>
         </div>
-        <div class="head-middle">
+        <router-link tag="div" class="head-middle" to="/search">
             <span class="iconfont">&#xe632;</span>
             输入城市/景点/游玩主题
-        </div>
+        </router-link>
         <router-link to="/city" class="head-right">
             <div class="head-right">
                 <div class="head-right-text">{{ this.city }}</div>

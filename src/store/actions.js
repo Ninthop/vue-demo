@@ -4,6 +4,9 @@ const actions = {
     },
     changeAttra (ctx, attraction) {
         ctx.commit('changeAttra', attraction)
+    },
+    changeIcons (ctx, decr) {
+        ctx.commit('changeIcons', decr)
     }
 }
 

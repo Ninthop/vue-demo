@@ -8,21 +8,26 @@
                     </h2>
                     <div class="the-city">{{  this.currentCity  }}</div>
                 </div>
+
+                <!-- 热门城市数据 -->
                 <div class="city-list">
                     <div class="hot-city">
                         <h2 class="hot-city-title">热门城市</h2>
                         <ul class="hot-city-table">
+                            <!-- gernerateClass，取消动态生成的，最下方的下边框 -->
                             <li 
                                 v-for="(item, index) of hotlist" 
                                 :key="item.id"
                                 @click="handleCityClick(item.city)"
-                                :class="gernerateClass(hotlist.length, index, 3)" 
+                                :class="gernerateClass(hotlist.length, index, 3)"
                             >{{ item.city }}</li>
                         </ul>
                     </div>
                 </div>
+
+                <!-- 字母排序表 -->
                 <div class="alpha-sort">
-                    <h2 class="alpha-sort-title">字母排序</h2>
+                    <h2 class="alpha-sort-title">字母排序 ---- 点击每页列表字母可返回头部</h2>
                     <ul class="alphabet-alpha">
                         <li v-for="(alpha, index) of list" 
                             :key="index" 
@@ -32,6 +37,8 @@
                         </li>
                     </ul>
                 </div>
+
+                <!-- 所有城市数据  点击每页字母后返回至头部 -->
                 <div class="all-city-list"
                     v-for="allCity of list" 
                     :key="allCity.cities.id"
@@ -39,6 +46,7 @@
                 >
                     <div class="city-alpha" @click="backTop()">{{ allCity.idx }}</div>
                     <ul class="city-list">
+                        <!-- gernerateClass，取消动态生成最下方的下边框 -->
                         <li 
                             v-for="(city, index) of allCity.cities" 
                             :key="index"
@@ -84,6 +92,7 @@ export default {
         },
         handleCityClick (city) {
             this.changeCity(city)
+            console.log(city + '请求了数据')
             this.$router.push('/')
         },
         ...mapMutations(['changeCity']),

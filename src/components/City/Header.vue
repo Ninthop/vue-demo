@@ -10,11 +10,13 @@
             <input type="text" placeholder="搜索" class="search" v-model="keyWord">
         </div>
         <nav>
-            <ul class="choose-two" v-bind:class="active">
+            <ul class="choose-two" :class="active">
                 <li class="china" @click="makeActive('china')">境内</li>
                 <li class="foreign" @click="makeActive('foreign')">境外·港澳台</li>
             </ul>
         </nav>
+
+        <!-- 搜索，未查询到时给出提示，查询到了则取消提示 -->
         <div class="search-content" ref="search" v-show="keyWord"> 
             <ul>
                 <li 
@@ -46,13 +48,14 @@ export default {
         }
     },
     methods: {
-        makeActive: function(country) {
+        makeActive (country) {
             this.active = country
             this.$emit('chosen', country)
         },
          handleCityClick (city) {
             this.$store.dispatch('changeCity', city)
             this.$router.push('/')
+            console.log(city + '请求了数据')
         }
     },
     watch: {

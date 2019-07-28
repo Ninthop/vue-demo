@@ -1,4 +1,5 @@
 <template>
+    <!-- 详情页简介 -->
     <div class="list">
         <div class="list-introduction">
             <ul class="attraction">

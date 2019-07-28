@@ -7,9 +7,9 @@ const mutations = {
     },
     changeAttra (state, attraction) {
         state.attraction = attraction
-        try {
-            localStorage.attraction = attraction
-        } catch (error) {}
+    },
+    changeIcons (state, decr) {
+        state.decr = decr
     },
 }
 

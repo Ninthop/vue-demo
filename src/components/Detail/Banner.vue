@@ -1,4 +1,5 @@
 <template>
+    <!-- 详情页画廊 -->
     <div class="banner">
         <img  @click="handleBannerClick" src="//img1.qunarzz.com/sight/p0/1903/61/617ac4a711f6cb34a3.img.jpg_600x330_e2ae600a.jpg" alt="" class="banner-img">
         <div class="banner-info">
@@ -10,12 +11,19 @@
                 26
             </div>
         </div>
-        <commom-gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></commom-gallary>
+        <fade>
+            <commom-gallary 
+                :imgs="imgs" 
+                v-show="showGallary" 
+                @close="handleGallaryClose"
+            ></commom-gallary>
+        </fade>
     </div>
 </template>
 
 <script>
 import CommomGallary from '_gallary/Gallary.vue'
+import Fade from '_common/animation/fade.vue'
 
 export default {
     name: 'DetailBanner',
@@ -28,7 +36,8 @@ export default {
         }
     },
     components: {
-        CommomGallary
+        CommomGallary,
+        Fade
     },
     methods: {
         handleBannerClick () {

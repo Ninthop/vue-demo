@@ -1,4 +1,35 @@
 # vue-demo01
+仿去哪儿移动端网页http://touch.piao.qunar.com/
+==============================================
+
+主要完成了城市切换搜索功能、主页、详情页
+
+城市数据来自饿了么
+
+主要使用了vue-cli  3.0、vuex、axios、stylus
+
+```
+├── public
+│   ├── mock                     // 模拟数据  
+├── src                          
+│   ├── assets                   // 字体、方法及静态资源
+│   ├── common                   // 公用组件
+│   ├── components               
+│   │   ├──City                  // 城市页组件
+│   │   ├──Detail                // 详情页组件
+│   │   ├──Home                  // 首页组件
+│   ├── router                   // 路由
+│   ├── store                    // 状态管理
+│   ├── views                    
+│   |   ├── City                 // 城市页
+│   |   ├── Detail               // 详情页
+│   │   ├── Home                 // 首页
+│   ├── App.vue
+│   └── main.js
+├── package.json                 // 项目依赖
+└── vue.config.js                // vue-cli 3.0配置
+```
+
 
 ## Project setup
 ```
@@ -14,16 +45,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
