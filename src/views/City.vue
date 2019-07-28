@@ -41,7 +41,7 @@ export default {
           console.log(error);
         });
       axios
-        .get('dist/mock/city.json')
+        .get('/mock/city.json')
         .then(response => {
           const data = response.data.data
           this.hotCityList = data.hotCityList
