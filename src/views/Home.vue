@@ -44,7 +44,7 @@ export default {
   },
   mounted () {
       axios
-        .get('/api/index.json?city=' + this.city)
+        .get('/mock/index.json?city=' + this.city)
         .then(response => {
           const data = response.data.data
           this.swiperList = data.swiperList
@@ -62,7 +62,7 @@ export default {
     if(this.lastCity != this.city) {
       this.lastCity = this.city
       axios
-        .get('/api/index.json?city=' + this.city)
+        .get('/mock/index.json?city=' + this.city)
     }
   }
 }

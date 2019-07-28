@@ -19,11 +19,11 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'https://ninthop.github.io/vue-demo/dist',   //代理接口
+        target: 'http://localhost:8080',   //代理接口
         changeOrigin: true,
         ws: true,
         pathRewrite: {
-          '^/api': 'https://ninthop.github.io/vue-demo/dist/mock'    //代理的路径
+          '^/api': '/mock'    //代理的路径
         }
       }
     },
