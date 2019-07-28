@@ -23,7 +23,7 @@ module.exports = {
         changeOrigin: true,
         ws: true,
         pathRewrite: {
-          '^/api': './mock'    //代理的路径
+          '^/api': '/mock'    //代理的路径
         }
       }
     },
