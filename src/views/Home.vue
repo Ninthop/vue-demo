@@ -44,7 +44,7 @@ export default {
   },
   mounted () {
       axios
-        .get('/mock/index.json?city=' + this.city)
+        .get('dist/mock/index.json?city=' + this.city)
         .then(response => {
           const data = response.data.data
           this.swiperList = data.swiperList

@@ -39,7 +39,7 @@ export default {
     },
     mounted () {
         axios
-        .get('/mock/list.json?attra=' + this.attraction)
+        .get('dist/mock/list.json?attra=' + this.attraction)
         .then(response => {
             const data = response.data.data
             this.detailList = data.detailList
