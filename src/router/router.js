@@ -5,9 +5,6 @@ export default[
       path: '/',
       name: 'home',
       component: Home,
-      params: {
-        
-      }
     },{
       path: '/city',
       name: 'city',
