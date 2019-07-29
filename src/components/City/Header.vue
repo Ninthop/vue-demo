@@ -112,7 +112,7 @@ export default {
                 text-align center
         .search-content
             position absolute
-            z-index 1
+            z-index 12
             top 6.45rem
             left 0
             right 0
