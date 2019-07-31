@@ -11,6 +11,9 @@ const mutations = {
     changeIcons (state, decr) {
         state.decr = decr
     },
+    changeDate (state, date) {
+        state.date = date
+    }
 }
 
 export default mutations

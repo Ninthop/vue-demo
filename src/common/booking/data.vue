@@ -2,8 +2,12 @@
     <div class="dataT">
         <div class="dataT-all">
             <div class="dataT-content dataT-all" @click.stop="handleDataShow">
-                <div class="dataT-title">选择时间</div>
-                这是一个还没实现的日历组件 
+                <calendar
+                    class="calendar"
+                    v-model="value"
+                    @blur="hidden"
+                >
+                </calendar>
             </div>
             <div class="close-two" @click.stop="handleCloseTwo">X</div>
         </div>
@@ -11,6 +15,8 @@
 </template>
 
 <script>
+import Calendar from '_common/booking/dataTest.vue'
+
 export default {
     name: 'DataTable',
     methods: {
@@ -19,7 +25,18 @@ export default {
         },
         handleCloseTwo () {
             this.$emit('CanT', false)
+        },
+        hidden () {
+            this.$emit('CanT', false)
         }
+    },
+    data () {
+        return {
+            value: new Date()
+        }
+    },
+    components: {
+        Calendar
     }
 }
 </script>
@@ -40,6 +57,8 @@ export default {
             background-color white
             width 100%
             height 23.2rem
+            .calendar
+                margin-top 2.5rem
             .close-two
                 position absolute
                 width 1rem
@@ -49,13 +68,4 @@ export default {
                 border-radius 50%
                 top 4%
                 right 4%
-            .dataT-content
-                .dataT-title
-                    display flex
-                    height 3.125rem
-                    justify-content center
-                    align-items center
-                    border-bottom 0.06rem solid lightgray
-                    margin 0 1rem
-                    font-size 1.05rem
 </style>

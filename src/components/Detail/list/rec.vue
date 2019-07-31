@@ -34,8 +34,7 @@
 </template>
 
 <script>
-import Booking from '_common/booking/booking.vue'
-import Transform from '_common/animation/transform.vue'
+import { mapState } from 'vuex'
 
 export default {
     name: 'Rec',
@@ -48,8 +47,8 @@ export default {
         }
     },
     components: {
-        Booking,
-        Transform
+        Booking: () => import('_common/booking/booking.vue'),
+        Transform: () => import('_common/animation/transform.vue')
     },
     methods: {
         handleStop (bool) {

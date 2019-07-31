@@ -7,6 +7,9 @@ const actions = {
     },
     changeIcons (ctx, decr) {
         ctx.commit('changeIcons', decr)
+    },
+    changeDate (ctx, date) {
+        ctx.commit('changeDate', date)
     }
 }
 

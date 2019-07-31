@@ -24,8 +24,6 @@
 </template>
 
 <script>
-import Rec from './rec.vue'
-
 export default {
     name: 'MenPiao',
     props: {
@@ -43,7 +41,7 @@ export default {
         }
     },
     components: {
-        Rec
+        Rec: () => import('./rec.vue')
     }
 }
 </script>

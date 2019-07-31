@@ -5,7 +5,7 @@
 
 [demo预览地址](https://ninthop.github.io/vue-demo/dist/index.html)
 
-主要完成了城市切换搜索功能、主页、详情页
+主要完成了城市切换搜索功能、主页、详情页、预订日期（日历组件）
 
 城市数据来自饿了么
 

@@ -25,6 +25,11 @@
                         </span>
                         <span class="book-content-datas-choose datas" @click="dataTableShow">
                             <div class="datas-title">其他日期</div>
+                            <div class="data-number" 
+                                v-show="ohterDateShown()"
+                            >
+                                {{ this.$store.state.date.getMonth()+1 }}月{{ this.$store.state.date.getDate() }}日
+                            </div>
                         </span>
                     </div>
                 </div>
@@ -42,9 +47,9 @@
 <script>
 import DataTable from './data.vue'
 import Transform from '_common/animation/transform.vue'
+import { mapState } from 'vuex'
 
 var d = new Date()
-
 export default {
     name: 'Booking',
     data () {
@@ -75,6 +80,9 @@ export default {
         },
         dataTableShow () {
             this.dataIsShow = true
+        },
+        ohterDateShown () {
+            return this.$store.state.date.getDate() != d.getDate() || this.$store.state.date.getMonth() != d.getMonth()
         }
     },
     mounted(){
@@ -89,36 +97,42 @@ export default {
         })
     },
     computed: {
-        todayMonth: function () {
+        todayMonth: () => {
             return d.getMonth()+1
         },
-        todayDay: function() {
+        todayDay: () => {
             return d.getDate()
         },
-        TomMonth: function () {
+        TomMonth: () => {
             let tom_milliseconds = d.getTime() + 1000*60*60*24
             let tom = new Date()
             tom.setTime(tom_milliseconds)
             return tom.getMonth()+1
         },
-        TomDay: function () {
+        TomDay: () => {
             let tom_milliseconds = d.getTime() + 1000*60*60*24
             let tom = new Date()
             tom.setTime(tom_milliseconds)
             return tom.getDate()
         },
-        daTomMonth: function () {
+        daTomMonth: () => {
             let tom_milliseconds = d.getTime() + 1000*60*60*24*2
             let tom = new Date()
             tom.setTime(tom_milliseconds)
             return tom.getMonth()+1
         },
-        daTomDay: function () {
+        daTomDay: () => {
             let tom_milliseconds = d.getTime() + 1000*60*60*24*2
             let tom = new Date()
             tom.setTime(tom_milliseconds)
             return tom.getDate()
         },
+        // otherMonth: () => {
+        //     return otherDate.getMonth()+1
+        // },
+        // otherDay: () => {
+        //     return otherDate.getDate()
+        // }
     }
 }
 </script>
