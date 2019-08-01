@@ -69,7 +69,7 @@ export default {
             }
         },
         isSelect (date) {
-            let {year, month, day} = util.getYMD(this.value)
+            let {year, month, day} = util.getYMD(this.$store.state.date)
             let {year:y, month:m, day:d} = util.getYMD(date)
             return year === y && month === m && day ===d
         },

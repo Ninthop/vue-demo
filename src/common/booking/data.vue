@@ -16,6 +16,7 @@
 
 <script>
 import Calendar from '_common/booking/dataTest.vue'
+import { mapState } from 'vuex'
 
 export default {
     name: 'DataTable',
@@ -32,7 +33,7 @@ export default {
     },
     data () {
         return {
-            value: new Date()
+            value: this.$store.state.date
         }
     },
     components: {

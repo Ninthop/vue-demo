@@ -62,6 +62,7 @@ export default {
         var that = this
         document.addEventListener('click', function(e){
             that.bookIsShow = false
+            that.$store.state.date = new Date()
         })
     },
     destroyed () {

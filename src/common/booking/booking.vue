@@ -13,17 +13,17 @@
                     <div class="book-content-datas" :class="active">
                         <span class="book-content-datas-today datas">
                             <div>今天</div>
-                            <div>{{ todayMonth }}月{{ todayDay }}日</div>
+                            <div>{{ today }}日</div>
                         </span>
                         <span class="book-content-datas-tomorrow datas" @click="makeBookActive('book-content-datas-tomorrow')">
                             <div class="datas-title">明天</div>
-                            <div class="data-number">{{ TomMonth }}月{{ TomDay }}日</div>
+                            <div class="data-number">{{ tomorrow }}日</div>
                         </span>
                         <span class="book-content-datas-DA-tomorrow datas" @click="makeBookActive('book-content-datas-DA-tomorrow')">
                             <div class="datas-title">后天</div>
-                            <div class="data-number">{{ daTomMonth }}月{{ daTomDay }}日</div>
+                            <div class="data-number">{{ dayAfterTomorrow }}日</div>
                         </span>
-                        <span class="book-content-datas-choose datas" @click="dataTableShow">
+                        <span class="book-content-datas-other datas" @click="dataTableShow">
                             <div class="datas-title">其他日期</div>
                             <div class="data-number" 
                                 v-show="ohterDateShown()"
@@ -50,6 +50,7 @@ import Transform from '_common/animation/transform.vue'
 import { mapState } from 'vuex'
 
 var d = new Date()
+
 export default {
     name: 'Booking',
     data () {
@@ -77,6 +78,7 @@ export default {
         handleStopT (bool) {
             this.dataIsShow = bool
             this.$emit('Stop', true)
+            this.makeBookActive('book-content-datas-other')
         },
         dataTableShow () {
             this.dataIsShow = true
@@ -85,48 +87,39 @@ export default {
             return this.$store.state.date.getDate() != d.getDate() || this.$store.state.date.getMonth() != d.getMonth()
         }
     },
-    mounted(){
-        var that = this
-        document.addEventListener('click', function(e){
-            that.dataIsShow = false        
-        })
-    },
-    destroyed () {
-        document.removeEventListener('click', function(e){
-            that.dataIsShow = false        
-        })
-    },
+    // mounted(){
+    //     var that = this
+    //     document.addEventListener('click', function(e){
+    //         that.dataIsShow = false
+    //         that.makeBookActive('book-content-datas-tomorrow')
+    //     })
+    // },
+    // destroyed () {
+    //     document.removeEventListener('click', function(e){
+    //         that.dataIsShow = false        
+    //     })
+    // },
     computed: {
-        todayMonth: () => {
-            return d.getMonth()+1
+        today: function () {
+            let date = new Date()
+            let todayM = date.getMonth() + 1 
+            let todayD = date.getDate()
+            return `${todayM}月${todayD}`
         },
-        todayDay: () => {
-            return d.getDate()
+        tomorrow: function () {
+            let date = new Date()
+            date.setDate(date.getDate()+1)
+            let tomorrowD = date.getDate()
+            let tomorrowM = date.getMonth() + 1
+            return `${tomorrowM}月${tomorrowD}`
         },
-        TomMonth: () => {
-            let tom_milliseconds = d.getTime() + 1000*60*60*24
-            let tom = new Date()
-            tom.setTime(tom_milliseconds)
-            return tom.getMonth()+1
-        },
-        TomDay: () => {
-            let tom_milliseconds = d.getTime() + 1000*60*60*24
-            let tom = new Date()
-            tom.setTime(tom_milliseconds)
-            return tom.getDate()
-        },
-        daTomMonth: () => {
-            let tom_milliseconds = d.getTime() + 1000*60*60*24*2
-            let tom = new Date()
-            tom.setTime(tom_milliseconds)
-            return tom.getMonth()+1
-        },
-        daTomDay: () => {
-            let tom_milliseconds = d.getTime() + 1000*60*60*24*2
-            let tom = new Date()
-            tom.setTime(tom_milliseconds)
-            return tom.getDate()
-        },
+        dayAfterTomorrow: function () {
+            let date = new Date()
+            date.setDate(date.getDate()+2)
+            let tomorrowD = date.getDate()
+            let tomorrowM = date.getMonth() + 1
+            return `${tomorrowM}月${tomorrowD}`
+        }
         // otherMonth: () => {
         //     return otherDate.getMonth()+1
         // },
@@ -241,6 +234,10 @@ export default {
                         color white !important
                 div.book-content-datas-DA-tomorrow
                     .book-content-datas-DA-tomorrow
+                        background-color $bgColor 
+                        color white !important
+                div.book-content-datas-other
+                    .book-content-datas-other
                         background-color $bgColor 
                         color white !important
 </style>
