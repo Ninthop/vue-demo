@@ -87,18 +87,18 @@ export default {
             return this.$store.state.date.getDate() != d.getDate() || this.$store.state.date.getMonth() != d.getMonth()
         }
     },
-    // mounted(){
-    //     var that = this
-    //     document.addEventListener('click', function(e){
-    //         that.dataIsShow = false
-    //         that.makeBookActive('book-content-datas-tomorrow')
-    //     })
-    // },
-    // destroyed () {
-    //     document.removeEventListener('click', function(e){
-    //         that.dataIsShow = false        
-    //     })
-    // },
+    mounted(){
+        var that = this
+        document.addEventListener('click', function(e){
+            that.dataIsShow = false
+            that.makeBookActive('book-content-datas-tomorrow')
+        })
+    },
+    destroyed () {
+        document.removeEventListener('click', function(e){
+            that.dataIsShow = false        
+        })
+    },
     computed: {
         today: function () {
             let date = new Date()
